@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ticTacToe">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+  </head>
+  <body ng-controller="BoardCtrl">
+    <div id="boardGame">
+      <h1 ng-show="board.won">{{ board.winningMarker }} won the game!</h1>
+        <table class="board">
+          <tbody>
+            <tr ng-repeat="row in board.grid">
+              <td ng-repeat="cell in row" ng-click="board.playCell(cell)" ng-class="{'winning': cell.winning}">
+              {{ cell.marker }} 
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    <button ng-click="board.reset()">reset board</button>
+    </div>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script> 
+    <script src="lib/angular-mocks/angular-mocks.js"></script> 
+    <script src="lib/underscore/underscore.js"></script>
+    <script type="text/javascript" src="app/board.js"></script> 
+  </body>
+</html>

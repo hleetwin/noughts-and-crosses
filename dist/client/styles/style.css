@@ -1,0 +1,64 @@
+#boardGame {
+  margin: 0 auto; 
+  display: inline-block;
+  text-align: center;
+  display: block;
+}
+
+button{
+  margin: 10px;
+}
+
+.board {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-style: hidden;
+  outline: none;
+  padding: 0px; 
+  margin: 0 auto; 
+  margin-top: 10px; 
+}
+
+.board tbody {
+  color: grey;
+  font-size: 600%;
+}
+
+.board tr td { 
+  width: 125px; 
+  height: 120px; 
+  border: 10px solid #1c1c1c; 
+  font-family: Arial Helvetica; 
+  font-weight: bolder;
+  text-align: center; 
+}
+
+/*@keyframes pulse {
+  0%, 100% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: green;
+  }
+}
+*/
+
+@keyframes shake {
+  0% {transform: translateX(0);}
+  12.5% {transform: translateX(-6px) rotateY(-5deg)}
+  37.5% {transform: translateX(5px) rotateY(4deg)}
+  62.5% {transform: translateX(-3px) rotateY(-2deg)}
+  87.5% {transform: translateX(2px) rotateY(1deg)}
+  100% {transform: translateX(0)}
+}
+
+.winning {
+  background: green;
+  color: white;
+/*  animation: pulse 3s ease infinite alternate,
+  nudge 5s linear infinite alternate;*/
+
+  animation: 
+    shake 400ms ease-in-out;
+}
+
