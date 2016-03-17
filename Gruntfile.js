@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   var webpack = require('webpack');
-  // var webpackDevServer
+  var WebpackDevServer = require("webpack-dev-server");
   var webpackConfig = require('./webpack.config.js');
   // load up all of the necessary grunt plugins
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -40,6 +40,17 @@ module.exports = function(grunt) {
         }
       },
 
+      // options: {
+      //   webpack: {
+      //     app: {
+      //       entry: "./client/app/app.js",
+      //       output: {
+      //         path: __dirname + '/client/app',
+      //         filename: "bundle.js"
+      //       }
+      //     }
+      //   }
+      // },
       options: {
         webpack: webpackConfig
       },
@@ -83,8 +94,11 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          hostname: 'localhost',
-          port: 8080
+          hostname: '0.0.0.0',
+          port: process.env.PORT || 8080,
+          base: 'dist/',
+          livereload: 35729,
+          keepalive: true
         }
       }
     },
@@ -180,5 +194,5 @@ module.exports = function(grunt) {
   grunt.registerTask('ci', [ 'karma:ci']);
 
   // Start watching and run tests when files change
-  grunt.registerTask('default', [ 'build', 'webpack-dev-server:start', 'copy', 'karma:watch:start', 'watch' ]);
+  grunt.registerTask('default', [ 'build', 'webpack', 'webpack-dev-server:start', 'copy', 'karma:watch:start', 'watch' ]);
 };

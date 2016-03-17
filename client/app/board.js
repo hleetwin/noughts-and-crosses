@@ -138,7 +138,7 @@ module.exports = function(ngModule) {
   ngModule.factory('Board', function() {
   return Board;
   });
-}
+};
 
 
 
