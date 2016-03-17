@@ -20,7 +20,7 @@ button{
 }
 
 .board tbody {
-  color: grey;
+  color: gray;
   font-size: 600%;
 }
 
@@ -33,32 +33,19 @@ button{
   text-align: center; 
 }
 
-/*@keyframes pulse {
+@keyframes pulse {
   0%, 100% {
     background-color: yellow;
   }
   50% {
-    background-color: green;
+    background-color: orange;
   }
-}
-*/
-
-@keyframes shake {
-  0% {transform: translateX(0);}
-  12.5% {transform: translateX(-6px) rotateY(-5deg)}
-  37.5% {transform: translateX(5px) rotateY(4deg)}
-  62.5% {transform: translateX(-3px) rotateY(-2deg)}
-  87.5% {transform: translateX(2px) rotateY(1deg)}
-  100% {transform: translateX(0)}
 }
 
 .winning {
-  background: green;
   color: white;
-/*  animation: pulse 3s ease infinite alternate,
-  nudge 5s linear infinite alternate;*/
-
   animation: 
-    shake 400ms ease-in-out;
+    pulse 3s ease infinite alternate,
+    nudge 5s linear infinite alternate;
 }
 
