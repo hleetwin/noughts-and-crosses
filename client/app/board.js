@@ -1,5 +1,3 @@
-angular.module('ticTacToe')
-.factory('Board', function() {
   var Board = (function() {
     var size = size || 3;
     var empty = ' ';
@@ -10,12 +8,12 @@ angular.module('ticTacToe')
       this.reset();
     }
 
-    Board.prototype.reset = function() {
+    Board.prototype.reset = (function() {
       //no wins since reset
       this.won = false;
       //always begins with 'o'
       this.currentPlayer = 0;
-      return this.grid = (function() {
+       this.grid = (function() {
         var results = [];
         for (var i = 1; 1 <= size ? i <= size : i >= size; 1 <= size ? i++ : i--){ results.push(i); }
         return results;
@@ -30,7 +28,25 @@ angular.module('ticTacToe')
           return new Cell(empty);
         });
       });
-    };
+      return this.grid;
+    //   return this.grid = (function() {
+    //     var results = [];
+    //     for (var i = 1; 1 <= size ? i <= size : i >= size; 1 <= size ? i++ : i--){ results.push(i); }
+    //     return results;
+    //     //add rows
+    //   }).apply(this).map(function() {
+    //     return (function() {
+    //       var results = [];
+    //       for (var i = 1; 1 <= size ? i <= size : i >= size; 1 <= size ? i++ : i--){ results.push(i); }
+    //       return results;
+    //     //add cell{marker: ' ', winning: undefined}
+    //     }).apply(this).map(function() {
+    //       return new Cell(empty);
+    //     });
+    //   });
+    });
+
+   
 
     Board.prototype.playCell = function(cell) {
       if (cell.hasBeenPlayed()) {
@@ -110,7 +126,24 @@ angular.module('ticTacToe')
       return;
     };
 
-    Cell = (function() {
+    // var Grid = (function() {
+    //     var results = [];
+    //     for (var i = 1; 1 <= size ? i <= size : i >= size; 1 <= size ? i++ : i--){ results.push(i); }
+    //     return results;
+    //     //add rows
+    //   }.apply(this).map(function() {
+    //     return (function() {
+    //       var results = [];
+    //       for (var i = 1; 1 <= size ? i <= size : i >= size; 1 <= size ? i++ : i--){ results.push(i); }
+    //       return results;
+    //     //add cell{marker: ' ', winning: undefined}
+    //     }).apply(this).map(function() {
+    //       return new Cell(empty);
+    //     });
+    //   });
+
+
+    var Cell = (function() {
       function Cell(marker, winning) {
         this.marker = marker;
         this.winning = winning !== null ? winning : false;
@@ -127,6 +160,9 @@ angular.module('ticTacToe')
     })();
     return Board;
   })();
+
+angular.module('ticTacToe')
+.factory('Board', function() {
   return Board;
 });
 

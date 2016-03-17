@@ -35,10 +35,10 @@ button{
 
 @keyframes pulse {
   0%, 100% {
-    background-color: yellow;
+    background-color: #b3c6ff;
   }
   50% {
-    background-color: orange;
+    background-color: #0040ff;
   }
 }
 
