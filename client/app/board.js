@@ -239,7 +239,9 @@ Board.prototype.winningDiagonal = function(grid, marker) {
     return diagonal;
   }
   var antiDiagonal = (function() {
-    for (n = 0; n <= ref; n++) {
+    var results = [];
+    var ref = size - 1;
+    for (n = 0; 0 <= ref ? n <= ref : n >= ref; 0 <=ref ? n++ : n--) {
       results.push(grid[n][size - 1 - n]);
     }
     return results;

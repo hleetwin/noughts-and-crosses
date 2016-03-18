@@ -1,15 +1,12 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none!important;
 }
+
 .boardGame {
   margin: 0 auto; 
   display: inline-block;
   text-align: center;
   display: block;
-}
-
-button{
-  margin: 10px;
 }
 
 .board {
@@ -22,18 +19,23 @@ button{
   margin-top: 10px; 
 }
 
-.board tbody {
-  color: gray;
+.board tbody{
+  font-color: grey;
   font-size: 600%;
 }
 
 .board tr td { 
-  width: 125px; 
-  height: 120px; 
+  width: 150px; 
+  height: 125px; 
   border: 10px solid #1c1c1c; 
-  font-family: Symbola Arial Helvetica; 
+  font-family: Arial Helvetica; 
   font-weight: bolder;
   text-align: center; 
+}
+
+.board tr td:hover {
+  cursor: pointer;
+  cursor: hand;
 }
 
 @keyframes pulse {
@@ -52,3 +54,9 @@ button{
     nudge 5s linear infinite alternate;
 }
 
+button {
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+}
