@@ -21,13 +21,14 @@
 
 .board tbody{
   font-color: grey;
-  font-size: 600%;
+  font-size: 500%;
 }
 
 .board tr td { 
   width: 150px; 
   height: 125px; 
   border: 10px solid #1c1c1c; 
+  color: grey;
   font-family: Arial Helvetica; 
   font-weight: bolder;
   text-align: center; 
