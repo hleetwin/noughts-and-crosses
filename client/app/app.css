@@ -1,7 +1,3 @@
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none!important;
-}
-
 .boardGame {
   margin: 0 auto; 
   display: inline-block;
@@ -20,6 +16,7 @@
 }
 
 .board tbody{
+  border-spacing: 0;
   font-color: grey;
   font-size: 500%;
 }
@@ -37,6 +34,10 @@
 .board tr td:hover {
   cursor: pointer;
   cursor: hand;
+}
+
+table td {
+  border-collapse: collapse;
 }
 
 @keyframes pulse {
@@ -61,3 +62,4 @@ button {
   cursor: pointer;
   outline: none;
 }
+

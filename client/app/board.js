@@ -1,12 +1,11 @@
 var _ = require('underscore');
 
 var Board = (function() {
-var Cell, cross, empty, nought, playerMarkers, size;
-size = size||3;
-empty = ' ';
-nought = '◯';
-cross = '✖';
-playerMarkers = [nought, cross];
+var size = size||3;
+var empty = ' ';
+var nought = '◯';
+var cross = '✖';
+var playerMarkers = [nought, cross];
 function Board() {
   this.reset();
 }
@@ -134,6 +133,7 @@ return Board;
 
 module.exports = function(ngModule) {
   ngModule.factory("Board", function() {
+    // require('./app.css');
   return Board;
   });
 }
