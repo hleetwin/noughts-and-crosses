@@ -1,4 +1,5 @@
 var path = require('path');
+var WebpackDevServer = require('webpack-dev-server');
 var webpack = require('webpack');
 var console = require('console');
 
@@ -14,10 +15,7 @@ module.exports = {
       {
         test: /\.js$/, 
         loader: 'babel', 
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015']
-        }
+        exclude: /node_modules/
       }
     ]
   },

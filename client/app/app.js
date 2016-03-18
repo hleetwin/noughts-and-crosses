@@ -6,7 +6,9 @@ if(ON_TEST){
 
 const ngModule = angular.module('ticTacToe', ['ng']);
 ngModule.controller('BoardCtrl', function($scope, Board) {
-  return $scope.board = new Board;
+  $scope.board = new Board;
+  return $scope.board;
 });
 
 require('./board.js')(ngModule);
+

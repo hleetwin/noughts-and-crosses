@@ -1,3 +1,6 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none!important;
+}
 .boardGame {
   margin: 0 auto; 
   display: inline-block;
@@ -28,7 +31,7 @@ button{
   width: 125px; 
   height: 120px; 
   border: 10px solid #1c1c1c; 
-  font-family: Arial Helvetica; 
+  font-family: Symbola Arial Helvetica; 
   font-weight: bolder;
   text-align: center; 
 }
