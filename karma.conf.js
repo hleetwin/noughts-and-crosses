@@ -7,10 +7,9 @@ module.exports = function(config) {
     ],
 
     // list of files / patterns to load in the browser
-    files: require('./include.conf.js').concat([
-      'test/unit/**/*.js',
-      'test/integration/**/*.js'
-    ]),
+    files: 
+      [entry],
+      webpack: webpackConfig,
 
     // list of files to exclude
     exclude: [

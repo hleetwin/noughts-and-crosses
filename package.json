@@ -4,8 +4,9 @@
   "description": "",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "grunt test",
-    "start": "node node_modules/.bin/webpack-dev-server --content-base client"
+    "test": "NODE_ENV=test karma start",
+    "start": "node node_modules/.bin/webpack-dev-server --content-base client",
+    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp client/index.html dist/client/index.html"
   },
   "repository": {
     "type": "git",
