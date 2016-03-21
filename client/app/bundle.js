@@ -26668,7 +26668,7 @@
 	    require('./board.test')(ngModule);
 	  }
 
-	  ngModule.factory("Board", function () {
+	  ngModule.factory('Board', function () {
 	    __webpack_require__(5);
 	    return Board;
 	  });

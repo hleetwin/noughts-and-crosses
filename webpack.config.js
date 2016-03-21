@@ -3,7 +3,7 @@ var WebpackDevServer = require('webpack-dev-server');
 var webpack = require('webpack');
 
 
-module.exports = {
+var config = {
   context: __dirname + '/client/app',
   entry: './app.js',
   output: {
@@ -12,7 +12,10 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
+      { test: /\.js$/, 
+        loader: 'babel',
+        exclude: /node_modules/
+      },
       {test: /\.css$/, loader: 'style!css', exclude: /node_modules/}
     ]
   },
@@ -26,3 +29,8 @@ module.exports = {
   }
 };
 
+if(process.env.NODE_ENV === 'production') {
+  config.output.path = __dirname + '/dist';
+}
+
+module.exports = config;

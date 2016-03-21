@@ -142,7 +142,7 @@ module.exports = function(ngModule) {
     require('./board.test')(ngModule);
   }
 
-  ngModule.factory("Board", function() {
+  ngModule.factory('Board', function() {
     require('./app.css');
   return Board;
   });

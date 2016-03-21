@@ -6,8 +6,7 @@ preprocessors[entry] = ['webpack'];
 
 module.exports = function(config) {
   config.set({
-    // base path, that will be used to resolve files and exclude
-    // basePath: './',
+    // base path, that will be used to resolve files 
     basePath: '',
 
     frameworks: ['mocha', 'chai', 'sinon'],
@@ -18,7 +17,6 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'karma.conf.js'
     ],
 
     // progress reporter: lists each test run and whether they pass/fail
@@ -36,19 +34,12 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
     // the browsers that should be tested
-    browsers: [
-      'Chrome'
-    ],
+    browsers: ['Chrome'],
 
-    preprocessors: {
-      // Source files you want to generate coverage reports for
-      // This should not include tests or libraries
-      // These files will be instrumented by Istanbul
-      'client/app/*.js': ['coverage']
-    },
+    preprocessors: preprocessors,
 
     // Configure the reporter
     coverageReporter: {
