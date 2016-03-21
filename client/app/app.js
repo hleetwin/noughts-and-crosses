@@ -1,4 +1,3 @@
-require('./app.css');
 const angular = require('angular');
 
 if(ON_TEST){

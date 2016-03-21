@@ -1,19 +1,20 @@
 var _ = require('underscore');
 
 var Board = (function() {
-var size = size||3;
-var empty = ' ';
-var nought = '◯';
-var cross = '✖';
-var playerMarkers = [nought, cross];
-function Board() {
-  this.reset();
+  var size = size||3;
+  var empty = ' ';
+  var nought = '◯';
+  var cross = '✖';
+  var playerMarkers = [nought, cross];
+
+  function Board() {
+    this.reset();
+
 }
 
 Board.prototype.reset = function() {
-  //no wins since reset
   this.won = false;
-  //always begins with 'o'
+  //Begin game with player ◯
   this.currentPlayer = 0;
   this.grid = (function() {
     var results = [];
@@ -21,7 +22,7 @@ Board.prototype.reset = function() {
       results.push(i);
     }
     return results;
-    //add rows
+    //Create 
   }).apply(this).map(function() {
     return (function() {
       var results = [];
@@ -29,7 +30,7 @@ Board.prototype.reset = function() {
         results.push(i);
       }
       return results;
-    //add cell{marker: ' ', winning: undefined}
+    //Iterate over board and output a cell for each position
     }).apply(this).map(function() {
       return new Cell(empty);
     });
@@ -37,6 +38,7 @@ Board.prototype.reset = function() {
   return this.grid;
 };
 
+//Marks cell as played and keeps track of plays
 Board.prototype.playCell = function(cell) {
   if (cell.hasBeenPlayed() || this.won) {
     return;
@@ -63,6 +65,7 @@ Board.prototype.currentPlayerMarker = function() {
 };
 
 Board.prototype.switchPlayer = function() {
+  //bitwise XOR assignment that ensures players switched between ◯ and ✖
   return this.currentPlayer ^= 1;
 };
 
@@ -89,6 +92,7 @@ Board.prototype.winningDiagonal = function(grid, marker) {
   var cellMatches = function(cell) {
     return cell.marker === marker;
   };
+
   var diagonal = (function() {
     for (var n = 0; n <= ref; n++) {
       results.push(grid[n][n]);
@@ -98,6 +102,7 @@ Board.prototype.winningDiagonal = function(grid, marker) {
   if ((diagonal).every(cellMatches)) {
     return diagonal;
   }
+
   var antiDiagonal = (function() {
     var results = [];
     var ref = size - 1;
@@ -132,8 +137,13 @@ return Board;
 
 
 module.exports = function(ngModule) {
+
+  if(ON_TEST) {
+    require('./board.test')(ngModule);
+  }
+
   ngModule.factory("Board", function() {
-    // require('./app.css');
+    require('./app.css');
   return Board;
   });
 }

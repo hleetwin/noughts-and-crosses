@@ -7,15 +7,14 @@ preprocessors[entry] = ['webpack'];
 module.exports = function(config) {
   config.set({
     // base path, that will be used to resolve files and exclude
-    basePath: './',
+    // basePath: './',
+    basePath: '',
 
-    frameworks: ['mocha', 'chai', 'sinon'
-    ],
+    frameworks: ['mocha', 'chai', 'sinon'],
 
     // list of files / patterns to load in the browser
-    files: 
-      [entry],
-      webpack: webpackConfig,
+    files: [entry],
+    webpack: webpackConfig,
 
     // list of files to exclude
     exclude: [
@@ -68,6 +67,7 @@ module.exports = function(config) {
 
     // any additional plugins needed for testing
     plugins: [
+      require('karma-webpack'),
       'karma-coverage',
       'karma-mocha',
       'karma-chai',
