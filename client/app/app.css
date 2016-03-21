@@ -1,44 +1,32 @@
 .boardGame {
   margin: 0 auto; 
-  display: inline-block;
-  text-align: center;
   display: block;
+  text-align: center;
 }
 
 .board {
   border-collapse: collapse;
-  border-spacing: 0;
   border-style: hidden;
-  outline: none;
   padding: 0px; 
   margin: 0 auto; 
   margin-top: 10px; 
 }
 
-.board tbody{
-  border-spacing: 0;
-  font-color: grey;
-  font-size: 500%;
-}
-
-.board tr td { 
+table tr td { 
   width: 150px; 
   height: 125px; 
   border: 10px solid #1c1c1c; 
   color: grey;
-  font-family: Arial Helvetica; 
+  font-family: Helvetica; 
+  font-size: 500%;
   font-weight: bolder;
-  text-align: center; 
 }
 
-.board tr td:hover {
+tr td:hover {
   cursor: pointer;
   cursor: hand;
 }
 
-table td {
-  border-collapse: collapse;
-}
 
 @keyframes pulse {
   0%, 100% {
@@ -48,6 +36,7 @@ table td {
     background-color: #0040ff;
   }
 }
+
 
 .winning {
   color: white;
