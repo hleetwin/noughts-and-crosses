@@ -10,4 +10,4 @@ $npm install
 Start the server:
 $npm start
 
-go to http://localhost:8080 in your browser.
+Go to http://localhost:8080 in your browser.
