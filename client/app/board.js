@@ -81,7 +81,6 @@ Board.prototype.winningRow = function(grid, marker) {
   });
 };
 
-//brilliant!  zip up, then use winningRow to find matches.  reuse former formula.
 Board.prototype.winningColumn = function(grid, marker) {
   return this.winningRow(_.zip.apply(null, grid), marker);
 };
